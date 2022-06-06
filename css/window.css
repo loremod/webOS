@@ -6,6 +6,7 @@
     left:25%;
     right:25%;
     background-color: aliceblue;
+    resize: both;
     border-radius: 10px 10px 0 0;
 }
 

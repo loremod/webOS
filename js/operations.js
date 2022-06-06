@@ -1,10 +1,10 @@
 
 let commands = ["sum", "sub", "multiply", "divide", "commands","pow","order","clean","doggify", "random-joke","color"];
+
+//TODO for each terminal
 let terminal = document.getElementsByTagName("textarea")[0]
 terminal.addEventListener("keydown",(e)=>{onKeyTyped(e)})
-for(var i = 0;i < lines.length;i++){
-    //code here using lines[i] which will give you each line
-}
+
 function onKeyTyped(e) {
     switch(e.key) {
         case "Enter":
