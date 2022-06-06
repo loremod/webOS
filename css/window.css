@@ -5,26 +5,23 @@
     bottom:25%;
     left:25%;
     right:25%;
-    background-color: rgba(48, 10, 36, 0.70);
+    background-color: aliceblue;
     border-radius: 10px 10px 0 0;
 }
-.window:hover{
-    background-color: rgba(48, 10, 36, 0.90);
-}
 
-.header{
+.window > .header{
     position:relative;
     top:0;left:0;
     margin: 0;
     padding: 0;
     background-color: rgba(72, 71, 66, 0.911);
 }
-.btns-container{
+.window > .header > .btns-container{
     display: inline-block;
     margin:8px;
 }
 
-.round-btn {
+.window > .header .round-btn {
     display: inline-block;
     margin:1px;
     height: 26px;
@@ -32,51 +29,21 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.round-btn:hover {
+.window > .header .round-btn:hover {
     margin:0px;
     height: 28px;
     width: 28px;
 }
 
-.close-btn{
+.window > .header .close-btn{
     background: url("../img/close_icon.ico");
     background-size: contain;
 }
-.hide-btn{
+.window > .header .hide-btn{
     background: no-repeat  center/80% url("../img/minimaze_button.PNG");
     background-size: contain;
 }
-.resize-btn{
+.window > .header .resize-btn{
     background: no-repeat  center/80% url("../img/resize_button.PNG");
     background-size: cover;
-}
-.shell-title{
-    display: inline-block;
-    color:aliceblue;
-    letter-spacing: 1px;
-    position: absolute;
-    top: 15px;
-}
-.shell-title::after{
-    content:":~";
-}
-.shell-title:hover{
-    color: greenyellow;
-}
-.content{
-    position: absolute;
-    top: 48;
-    bottom:0;
-    width: 100%;
-    margin:0;
-    /* color:aliceblue; */
-    color: greenyellow;
-    letter-spacing: 1px;
-    background-color: transparent;
-    overflow:hidden;
-    outline: none;
-    border:none;
-    resize:none;
-    font-size: large;
-    text-decoration: none;
 }

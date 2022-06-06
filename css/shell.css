@@ -1,0 +1,36 @@
+.shell{
+    background-color: rgba(48, 10, 36, 0.70);
+}
+.shell:hover{
+    background-color: rgba(48, 10, 36, 0.90);
+}
+.shell > .header > .shell-title{
+    display: inline-block;
+    color:aliceblue;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 15px;
+}
+.shell > .header > .shell-title::after{
+    content:":~";
+}
+.shell > .header > .shell-title:hover{
+    color: greenyellow;
+}
+.shell > .content > .shell-content{
+    position: absolute;
+    top: 48;
+    bottom:0;
+    width: 100%;
+    margin:0;
+    /* color:aliceblue; */
+    color: greenyellow;
+    letter-spacing: 1px;
+    background-color: transparent;
+    overflow:hidden;
+    outline: none;
+    border:none;
+    resize:none;
+    font-size: large;
+    text-decoration: none;
+}
