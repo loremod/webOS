@@ -1,41 +1,57 @@
 <html>
-
-<head>
+  <head>
     <title>Linux Terminal</title>
-</head>
-<style>
+  </head>
+  <style>
     html {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-        margin: 0;
-        padding: 0;
-        background: no-repeat center/80% url("img/desktop_background.jpg");
-        background-size: cover;
+      margin: 0;
+      padding: 0;
+      background: no-repeat center/80% url("img/desktop_background.jpg");
+      background-size: cover;
     }
-</style>
-<link rel="stylesheet" type="text/css" href="./css/window.css" />
-<body>
-    <div class="window">
-        <div class="header">
-            <div class="btns-container">
-                <div class="round-btn close-btn"></div>
-                <div class="round-btn hide-btn"></div>
-                <div class="round-btn resize-btn"></div>
+  </style>
+  <link rel="stylesheet" type="text/css" href="./css/taskbar.css" />
+  <link rel="stylesheet" type="text/css" href="./css/window.css" />
+  <link rel="stylesheet" type="text/css" href="./css/shell.css" />
+  <body>
+    <div class="window shell">
+      <div class="header">
+        <div class="btns-container">
+          <div class="round-btn close-btn"></div>
+          <div class="round-btn hide-btn"></div>
+          <div class="round-btn resize-btn"></div>
+        </div>
+        <div class="shell-title">lorenzo@modicaOS</div>
+      </div>
+      <div class="content">
+        <!-- lorenzo@modicaOS:~ -->
+        <textarea class="shell-content" spellcheck="false"></textarea>
+      </div>
+    </div>
+    <div class="taskbar small-taskbar medium-taskbar">
+      <center>
+        <div class="item-taskbar">
+            <div class="logo" style="background: no-repeat center/80% url('img/terminale_logo.png');">
+                <div class="appname">Terminale</div>
             </div>
-            <div class="shell-title">lorenzo@modicaOS</div>
         </div>
-        <div>
-            <!-- lorenzo@modicaOS:~ -->
-            <textarea class="content" spellcheck="false"></textarea>
+        <div class="item-taskbar">
+            <div class="logo">
+
+            </div>
         </div>
-    </div>
-    <div>
+        <div class="item-taskbar">
+            <div class="logo">
 
+            </div>
+        </div>
+      </center>
     </div>
-<script src="./js/operations.js"></script>
-</body>
-
+    <script src="./js/operations.js"></script>
+  </body>
 </html>
