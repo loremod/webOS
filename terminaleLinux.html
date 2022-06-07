@@ -19,8 +19,7 @@
   <link rel="stylesheet" type="text/css" href="./css/window.css" />
   <link rel="stylesheet" type="text/css" href="./css/shell.css" />
   <body>
-
-    <div class="window shell" data-size="normal" data-id="2">
+    <div class="window shell" data-size="normal" data-pid="1" data-app="shell">
       <div class="header">
         <div class="btns-container">
           <div class="round-btn close-btn"></div>
@@ -30,32 +29,73 @@
         <div class="shell-title">lorenzo@modicaOS</div>
       </div>
       <div class="content">
-        <!-- lorenzo@modicaOS:~ -->
         <textarea class="shell-content" spellcheck="false"></textarea>
       </div>
     </div>
 
-
     <div class="taskbar small-taskbar medium-taskbar">
       <center>
-        <div class="item-taskbar">
-            <div class="logo" style="background: no-repeat center/80% url('img/terminale_logo.png');">
-                <div class="appname">Terminale</div>
-            </div>
+        <div class="item-taskbar" data-app="shell">
+          <div
+            class="logo"
+            style="
+              background: no-repeat center/80% url('img/terminale_logo.png');
+            "
+          >
+            <div class="appname">Terminale</div>
+          </div>
+          <div class="list">
+            <div class="row instance" data-pid="1">Terminale(1)</div>
+            <div class="row instance" data-pid="2">Terminale(2)</div>
+            <div class="row new">Nuova Finestra</div>
+          </div>
         </div>
-        <div class="item-taskbar">
-            <div class="logo">
 
-            </div>
+        <div class="item-taskbar" data-app="camera">
+          <div
+            class="logo"
+            style="background: no-repeat center/100% url('img/camera2.png')"
+          >
+            <div class="appname">Camera</div>
+          </div>
+          <div class="list">
+            <div class="row instance">Camera(2)</div>
+            <div class="row instance">Camera(1)</div>
+            <div class="row new">Nuova Finestra</div>
+          </div>
         </div>
-        <div class="item-taskbar">
-            <div class="logo">
 
-            </div>
+        <div class="item-taskbar" data-app="open-door-tutorial">
+          <div
+            class="logo"
+            style="background: no-repeat center/70% url('img/door.png')">
+            <div class="appname">How to open a door</div>
+          </div>
+          <div class="list">
+            <div class="row instance">Terminale(1)</div>
+            <div class="row instance">Terminale(2)</div>
+            <div class="row new">Nuova Finestra</div>
+          </div>
         </div>
+
+        <div class="item-taskbar" data-app="pizza-tutorial">
+          <div
+            class="logo"
+            style="background: no-repeat center/90% url('img/pizza.png')">
+            <div class="appname">Make a pizza</div>
+          </div>
+          <div class="list">
+            <div class="row instance">Terminale(1)</div>
+            <div class="row instance">Terminale(2)</div>
+            <div class="row new">Nuova Finestra</div>
+          </div>
+        </div>
+
       </center>
     </div>
-    <script src="./js/window.js"></script>
+    <script src="./js/camera.js"></script>
     <script src="./js/operations.js"></script>
+    <script src="./js/window.js"></script>
+    <script src="./js/taskbar.js"></script>
   </body>
 </html>

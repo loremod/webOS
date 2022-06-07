@@ -7,6 +7,8 @@
     right:25%;
     background-color: aliceblue;
     resize: both;
+    min-width: 300px;
+    min-height: 200px;
     border-radius: 10px 10px 0 0;
 }
 
@@ -47,4 +49,12 @@
 .window > .header .resize-btn{
     background: no-repeat  center/80% url("../img/resize_button.PNG");
     background-size: cover;
+}
+
+.window > .header .window-title{
+    display: inline-block;
+    color:aliceblue;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 15px;
 }

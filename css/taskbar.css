@@ -1,10 +1,11 @@
 .taskbar{
+    z-index: 9999;
     position:absolute;
     bottom:0;
     left:0;
     right: 0;
     height:70px; 
-    background-color: rgba(0, 200, 224, 0.4);;
+    background-color: rgba(0, 200, 224, 0.4);
     border-radius: 0 0 0 0;
 }
 .taskbar:hover{
@@ -31,7 +32,7 @@
     }
 }
 
-.item-taskbar{
+.taskbar .item-taskbar{
     position:relative;
     display: inline-block;
     margin:0 5;
@@ -44,7 +45,7 @@
 }
 
 
-.logo{
+.taskbar .item-taskbar .logo{
     border-radius: 10px 10px 0 0;
     background: url("https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_NewSuperMarioBrosUDeluxe_image1600w.jpg");
     background-size: cover;
@@ -57,7 +58,7 @@
     left: 0;   
 }
 
-.logo>.appname{
+.taskbar .item-taskbar .logo>.appname{
     display: none;
     position:absolute;
     bottom: 0;
@@ -68,10 +69,48 @@
     padding: 5px;
 }
 
-.logo:hover>.appname{
+.taskbar .item-taskbar .logo:hover>.appname{
     display: block;
 }
 
-.logo:hover{
+.taskbar .item-taskbar .logo:hover{
  top:-15;
 }
+
+
+
+.taskbar .item-taskbar .list{
+    display:none;
+    position:absolute;
+    bottom:100%;
+    height: auto;
+    left:-10%;
+    width: 120%;
+    overflow: auto;
+    background-color: rgba(0, 200, 224, 0.4);
+    border-radius: 10px 10px 0 0;
+}
+
+.taskbar .item-taskbar .list > .row{
+    margin: 0px 0px;
+    border-width: 1px;
+    padding: 5px 0;
+    border-bottom-style: solid;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.taskbar .item-taskbar .list > .row:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.taskbar .item-taskbar .list > .row:active{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.taskbar:hover .item-taskbar .list{
+    background-color: rgba(0, 224, 200, 0.6);
+}
+
+/* .taskbar .item-taskbar:hover .list{
+    display:block;
+} */

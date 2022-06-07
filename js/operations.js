@@ -2,71 +2,73 @@
 let commands = ["sum", "sub", "multiply", "divide", "commands","pow","order","clean","doggify", "random-joke","color"];
 
 //TODO for each terminal
-let terminal = document.getElementsByTagName("textarea")[0]
-terminal.addEventListener("keydown",(e)=>{onKeyTyped(e)})
+function initializeShell(node){
+    let terminal = node.getElementsByTagName("textarea")[0]
+    terminal.addEventListener("keydown",(e)=>{shell_onKeyTyped(e)})
+}
 
-function onKeyTyped(e) {
+function shell_onKeyTyped(e) {
     switch(e.key) {
         case "Enter":
-            getCommandLine();
+            getCommandLine(e.currentTarget);
           break;
         case "Backspace":
           break;
     }
 }
 
-function getCommandLine(){
+function getCommandLine(terminal){
     let lines = terminal.value.split('\n');
     let lineIndex = lines.length - 1;
-    execCommand(lines[lineIndex])
+    execCommand(lines[lineIndex],terminal)
 }
 
-function execCommand(line){
+function execCommand(line,terminal){
     tokens = line.split(" ");
     command = tokens[0];
     params = tokens.slice(1);
     switch(command){
         case "sum":
-            execSum(params);
+            execSum(params,terminal);
             break;
         case "sub":
-            execSub(params);
+            execSub(params,terminal);
             break;
         case "multiply":
-            execMoltiply(params);
+            execMoltiply(params,terminal);
             break;
         case "divide":
-            execDivide(params);
+            execDivide(params,terminal);
             break;
         case "commands":
-            printCommands();
+            printCommands(terminal);
             break;
         case "pow":
-            execPow(params);
+            execPow(params,terminal);
             break;
         case "order":
-            orderList(params);
+            orderList(params,terminal);
             break;
         case "clean":
-            svuota();
+            svuota(terminal);
             break;
         case "doggify":
-            doggify(params);
+            doggify(params,terminal);
             break;
         case "random-joke":
-            randomJoke();
+            randomJoke(terminal);
             break;
         case "color":
-            changeColor(params);
+            changeColor(params,terminal);
             break;
     }
 }
 
-function changeColor(params){
+function changeColor(params,terminal){
     terminal.style.color = params[0];
 }
 
-function randomJoke(){
+function randomJoke(terminal){
     jokes = [];
     jokes[0] = "Il commercialista è triste perchè è partita Iva";
     jokes[1] = "Quante foglie ha un albero pasticcere?\nMille foglie"
@@ -75,17 +77,17 @@ function randomJoke(){
     rand = Math.floor(Math.random() * jokes.length);
     terminal.value+="\n"+jokes[rand];
 }
-function doggify(params){
+function doggify(params,terminal){
     terminal.value += "\n Doggified: "
     for(let i = 0; i < params.length; i++){
        terminal.value += "woof ";
     }
 }
-function svuota(){
+function svuota(terminal){
     terminal.value = "";
 }
 
-function orderList(params){
+function orderList(params,terminal){
     let num_list = [];
     console.log(params)
     for(let i = 1; i < params.length; i++){
@@ -100,17 +102,17 @@ function orderList(params){
     else terminal.value += "\n Syntax: order  <-asc | -desc>";
 }
 
-function printCommands(){
+function printCommands(terminal){
     terminal.value += "\n ---COMMANDS---";
     commands.forEach(element => {
         terminal.value += "\n -" + element + ".";
     });
 }
-function execPow(params){
+function execPow(params,terminal){
     terminal.value += "\n Totale:" + Math.pow(parseInt(params[0]), parseInt(params[1]));
 }
 
-function execSum(params){
+function execSum(params,terminal){
     let tot = 0;
     params.forEach(element => {
         tot += parseInt(element);
@@ -119,7 +121,7 @@ function execSum(params){
     terminal.value += '\n' + " Totale: " + tot;
 }
 
-function execSub(params){
+function execSub(params,terminal){
     let tot = 0;
     let sign = 1;
     params.forEach(element => {
@@ -130,7 +132,7 @@ function execSub(params){
     terminal.value += '\n' + " Totale: " + tot;
 }
 
-function execMoltiply(params){
+function execMoltiply(params,terminal){
     let tot = 1;
     params.forEach(element => {
         tot *= parseInt(element);
@@ -139,7 +141,7 @@ function execMoltiply(params){
     terminal.value += '\n' + " Totale: " + tot;
 }
 
-function execDivide(params){
+function execDivide(params,terminal){
     let tot = 1;
     let sign = 1;
     params.forEach(element => {
